@@ -16,13 +16,11 @@ app.get('/getNote', function(req, res) {
   });
 });
 
-app.post('/updateNote/:note', function(req, res) {
-  console.log("Loading test.json");
-  stringifyFile = req.params.note;
-  fs.writeFile('./test.json', stringifyFile, function(err) {
+app.post('/updateNote/:note', function (req, res) {
+  stringifyFile = data + req.params.note;
+  fs.writeFile('./test.json', stringifyFile, function (err) {
     if (err) throw err;
-    console.log("File updated");
-    res.send(stringifyFile);
+    res.send('file updated');
   });
 });
 
